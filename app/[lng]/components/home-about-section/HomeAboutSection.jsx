@@ -11,8 +11,6 @@ const HomeAboutSection = props => {
   const { id, category, title, description, aboutSectionItems } = props.section;
   const { content } = props;
 
-  console.log(content);
-
   const topSectionId = 'top-home-about-section';
   const bottomSectionId = 'bottom-home-about-section';
   // Shrink root so we trigger only when section is ~25% into viewport (negative = shrink)

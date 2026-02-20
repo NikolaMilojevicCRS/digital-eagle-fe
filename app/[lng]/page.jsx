@@ -114,7 +114,7 @@ const Home = async ({ params: { lng } }) => {
           logoUrl={logoUrl}
           kpiSection={content.homePageKpiSection}
         />
-        <HomeAboutSection section={aboutSection} content={content} />
+        <HomeAboutSection section={aboutSection} />
         <HomeWhatWeDoSection section={whatWeDoSection} />
         <HomeTechStackSection section={techStackSection} />
         <HomePortfolioSection section={homePortfolioSection} />
