@@ -1,0 +1,39 @@
+// media queries
+$extraSmall: 767px;
+$small: 1023px;
+$medium: 1366px;
+$large: 1367px;
+
+$largerThanMobile: 768px;
+$largerThanSmall: 1024px;
+$largerThanMedium: 1367px;
+
+// colors
+$brandPrimary: #3AB0A8;
+$brandSecondary: #E07A5F;
+$primary: rgba(0, 0, 0, 1);
+$secondary: rgba(255, 255, 255, 1);
+$tertiary: #1B2838;
+$lightText: #737373;
+$ultraLightText: #ABABAB;
+$mobNavLinkBg: rgba(255, 255, 255, 0.95);
+$mobNavLinkColor: rgba(41, 41, 41, 1);
+$mobNavLinkLeftBorder: #4468FC;
+$mobNavLinkHoverBg: rgba(242, 242, 242, 1);
+$footer: rgba(255, 255, 255, 0.5);
+$bodyBackground: #f2f2f2;
+$error: red;
+$success: green;
+
+$navbarHeight: 120px;
+$mobNavbarHeight: 75px;
+$fullHeightWithoutNavbar: calc(100vh - #{$navbarHeight});
+$mobileContentSidePaddingLike: 3%;
+$contentWidthMobile: calc(100% - $mobileContentSidePaddingLike * 2);
+$contentWidthLargerThanMobile: 90%;
+$footerHeight: 96px;
+$mobFooterHeight: 64px;
+
+$mobSectionPadding: 3rem;
+$tabletSectionPadding: 4rem;
+$desktopSectionPadding: 5rem;

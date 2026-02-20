@@ -1,0 +1,39 @@
+{
+  "NotFound": {
+    "pageNotFound": "De pagina die je hebt opgevraagd, kon niet worden gevonden.",
+    "goBack": "Terug naar de Startpagina"
+  },
+  "Navbar": {
+    "home": "NLHome",
+    "menu": "Our Menu",
+    "weddingsAndCelebrations": "Weddings and Celebrations",
+    "careers": "Careers",
+    "reservations": "Reservations",
+    "contact": "Contact"
+  },
+  "ContactForm": {
+    "date": "Date",
+    "time": "Time",
+    "dateTime": "Date and time",
+    "numberOfGuests": "Number of guests",
+    "email": "E-mail",
+    "name": "Name",
+    "phoneNumber": "Phone number",
+    "notice": "Annotation",
+    "event": "Event",
+    "message": "Message",
+    "firstName": "First name",
+    "surname": "Surname",
+    "town": "Town / City",
+    "address": "Address",
+    "about": "About you",
+    "area": "Area",
+    "inputError": "Please enter correct data",
+    "emailSent": "Your message has been successfully sent. Thank you.",
+    "emailNotSent": "Your message could not be sent at this moment. Please try again later.",
+    "reservationAccepted": "Your reservation is accepted"
+  },
+  "Email": {
+    "career": "Career"
+  }
+}

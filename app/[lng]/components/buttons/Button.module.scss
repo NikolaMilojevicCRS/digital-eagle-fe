@@ -1,0 +1,63 @@
+@import "styles";
+@import "mixins";
+
+.Button {
+  padding: 0 48px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, color 0.3s ease;
+  width: fit-content;
+  border-radius: 12px;
+  cursor: pointer;
+  @include box-shadow;
+  &.Contained {
+    background: $brandPrimary;
+    border: 1px solid $secondary;
+    color: $secondary;
+    &:hover {
+      background: transparent;
+      color: $secondary;
+      border: 1px solid $secondary;
+      &.Disabled {
+        background: $secondary;
+        border: 1px solid $secondary;
+        color: $primary;
+      }
+    }
+  }
+  &.Outlined {
+    background: transparent;
+    border: 1px solid $secondary;
+    color: $secondary;
+    &:hover {
+      background: $secondary;
+      color: $primary;
+      border: 1px solid $secondary;
+      &.Disabled {
+        background: transparent;
+        border: 1px solid $secondary;
+      }
+    }
+  }
+  &.Primary {
+    background: $tertiary;
+    border: 1px solid $tertiary;
+    color: $secondary;
+    &:hover {
+      background: $secondary;
+      color: $tertiary;
+      border: 1px solid $tertiary;
+      &.Disabled {
+        background: $secondary;
+        border: 1px solid $secondary;
+        color: $primary;
+      }
+    }
+  }
+  &.Disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+}

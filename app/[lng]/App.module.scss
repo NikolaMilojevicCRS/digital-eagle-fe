@@ -1,0 +1,123 @@
+@import "styles";
+@import "mixins";
+
+.Global {
+  color: $primary;
+  background-color: $bodyBackground;
+}
+
+.Main {
+  min-height: calc(100vh - #{$mobFooterHeight});
+  @media screen and (min-width: $largerThanMobile) {
+    min-height: calc(100vh - #{$footerHeight});
+  }
+}
+
+.PageContentTopPadding {
+  padding-top: $navbarHeight;
+}
+
+.Wrapper {
+  position: relative;
+  margin: 0 auto;
+  @include content-width;
+}
+
+.Section {
+  padding: $mobSectionPadding 0;
+  box-shadow: inset 0 -8px 10px rgba(0, 0, 0, 0.05);
+  @media screen and (min-width: $largerThanMobile) {
+    padding: $tabletSectionPadding 0;
+  }
+  @media screen and (min-width: $largerThanSmall) {
+    padding: $desktopSectionPadding 0;
+  }
+}
+
+.Home {
+  @include page-top-padding;
+}
+
+.SeoTitle {
+  position: absolute;
+  margin-left: -10000px;
+}
+
+.Paragraph {
+  margin-bottom: 1rem;
+}
+
+
+.TopSectionWrapper {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+}
+
+.NotFound {
+  position: relative;
+  height: 100vh;
+  .Content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .PageError {
+    font-size: 6rem;
+    line-height: 1;
+    border-bottom: 5px solid black;
+    margin-bottom: 2rem;
+    @media screen and (min-width: $largerThanMobile) {
+      font-size: 8rem;
+    }
+  }
+  .BrokenLinkImage {
+    margin-bottom: 16px;
+  }
+  .NotFoundTitle {
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-bottom: 2rem;
+    text-align: center;
+    @media screen and (min-width: $largerThanMobile) {
+      font-size: 2rem;
+    }
+  }
+  .NotFoundLink {
+    font-size: 14px;
+    text-decoration: underline;
+    @media screen and (min-width: $largerThanMobile) {
+      font-size: 18px;
+      white-space: nowrap;
+    }
+  }
+}
+
+.LoadingPage {
+  .Loading {
+    position: relative;
+    //height: $fullHeightWithoutNavbar;
+    height: 100vh;
+    .Content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .LoadingElement {
+      svg {
+        fill: #31ae4f !important;
+      }
+    }
+  }
+}

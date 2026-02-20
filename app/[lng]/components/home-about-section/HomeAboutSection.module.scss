@@ -1,0 +1,89 @@
+@import "mixins";
+
+.HomeAboutSectionWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.HomeAboutSection {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .Content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: $mobSectionPadding 0;
+    //@media screen and (min-width: $largerThanMobile) {
+    //  flex-direction: row;
+    //  align-items: center;
+    //  padding: $desktopSectionPadding 0;
+    //}
+  }
+  .SectionHeaderCategoryFadeIn,
+  .SectionHeaderTitleFadeIn,
+  .Description,
+  .AboutSectionItem {
+    opacity: 0;
+  }
+  &.InView {
+    .SectionHeaderCategoryFadeIn {
+      animation: fadeIn 0.4s ease-out forwards;
+    }
+    .SectionHeaderTitleFadeIn {
+      animation: fadeIn 0.4s ease-out forwards;
+      animation-delay: 0.4s;
+    }
+    .Description {
+      animation: fadeInRight 0.4s ease-out forwards;
+      animation-delay: 0.8s;
+    }
+    .AboutSectionItem {
+      animation: fadeInLeft 0.4s ease-out forwards;
+      @for $i from 1 through 15 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{1.2 + ($i - 1) * 0.4}s;
+        }
+      }
+    }
+  }
+  .AboutContent {
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: $largerThanSmall) {
+      flex-direction: row;
+    }
+    .Description {
+      flex: 1;
+      padding-right: 1rem;
+    }
+    .AboutSectionItemsWrapper {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 1.5rem;
+    }
+    .AboutSectionItem {
+      background-color: $secondary;
+      padding: 0.75rem 1rem;
+      border-top-right-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+      border-left: 4px solid $brandPrimary;
+      .Title {
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+      .Text {
+        font-size: 1rem;
+      }
+    }
+  }
+}

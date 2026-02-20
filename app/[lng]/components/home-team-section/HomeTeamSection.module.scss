@@ -1,0 +1,117 @@
+@import "styles";
+@import "mixins";
+
+.HomeTeamSection {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .Content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: $mobSectionPadding 0;
+  }
+
+  .TeamMembersContent {
+    width: 100%;
+    .TeamSectionMembersWrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      @media screen and (min-width: $largerThanMobile) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    }
+    .TeamMember {
+      //background-color: $brandSecondary;
+      padding: 1.5rem 1rem;
+      //border: 2px solid $tertiary;
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1 1 100%;
+      min-width: 0;
+      text-align: center;
+      @media screen and (min-width: $largerThanMobile) {
+        flex: 1 1 calc(50% - 0.5rem);
+        max-width: calc(50% - 0.5rem);
+      }
+      @media screen and (min-width: $largerThanSmall) {
+        padding: 2rem;
+        flex: 1 1 calc(25% - 0.75rem);
+        max-width: calc(25% - 0.75rem);
+      }
+      .TeamMemberImageWrapper {
+        width: 140px;
+        height: 140px;
+        background-color: $tertiary;
+        background-size: cover;
+        background-position: center;
+        color: $brandPrimary;
+        //border: 2px solid $tertiary;
+        border-radius: 100px;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+        font-size: 3.75rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .Name {
+        font-size: 1.33rem;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        color: $primary;
+      }
+      .Role {
+        color: $brandSecondary;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .SectionHeaderCategoryFadeIn,
+  .SectionHeaderTitleFadeIn,
+  .SectionHeaderSubtitleFadeIn,
+  .TeamMember {
+    opacity: 0;
+  }
+
+  &.InView {
+    .SectionHeaderCategoryFadeIn {
+      animation: fadeIn 0.4s ease-out forwards;
+    }
+
+    .SectionHeaderTitleFadeIn {
+      animation: fadeIn 0.4s ease-out forwards;
+      animation-delay: 0.4s;
+    }
+
+    .SectionHeaderSubtitleFadeIn {
+      animation: fadeIn 0.4s ease-out forwards;
+      animation-delay: 0.8s;
+    }
+
+    .TeamMember {
+      animation: fadeInUp 0.4s ease-out forwards;
+      @for $i from 1 through 15 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{1.2 + ($i - 1) * 0.4}s;
+        }
+      }
+    }
+  }
+}

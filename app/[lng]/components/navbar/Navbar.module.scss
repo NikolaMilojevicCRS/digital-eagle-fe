@@ -1,0 +1,183 @@
+@import "styles";
+@import "mixins";
+
+$linksGap: 48px;
+$smallScreenLinksGap: 18px;
+$mobMenuWidth: 100vw;
+
+.Navbar {
+  background: linear-gradient(180deg, rgba(6,6,6,0.4724483543417367) 40%, rgba(186,207,212,0) 100%);
+  height: $mobNavbarHeight;
+  z-index: 1000;
+  position: fixed;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: $secondary;
+  @media screen and (min-width: $largerThanMobile) {
+    height: $navbarHeight;
+  }
+}
+
+.Content {
+  @include content-width;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media screen and (min-width: $largerThanMobile) {
+    justify-content: space-between;
+  }
+}
+
+.DesktopNavbar {
+  display: none;
+  @media screen and (min-width: $largerThanMobile) {
+    display: flex;
+    align-items: center;
+    margin-right: 64px;
+  }
+}
+
+.Logo {
+  width: 50px;
+  display: inline-block;
+  @media screen and (min-width: $largerThanSmall) {
+    margin-right: $linksGap;
+    opacity: 0; /* Initial opacity */
+    animation: fadeIn 1.2s ease-out forwards; /* Animation for Title */
+    animation-delay: 1.2s; /* Delay Subtitle animation by 0.6s */
+  }
+}
+
+.LogoImage {
+  width: 100%;
+  height: auto;
+  filter:
+    drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.1))
+    drop-shadow(0px 0px 0px rgba(255, 255, 255, 0.3))
+    drop-shadow(0px 0px 2px rgba(255, 255, 255, 0.3))
+}
+
+.NavLink {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 $smallScreenLinksGap;
+  white-space: nowrap;
+  position: relative; // Required for the pseudo-element positioning
+  @include text-shadow;
+
+  // Default state of the pseudo-element
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px; // Border thickness
+    background-color: $brandSecondary; // Uses text color
+    transition: all 0.3s ease-out;
+    transform: translateX(-50%);
+    @include box-shadow;
+  }
+
+  @media screen and (min-width: $largerThanMobile) {
+    &.ContactLink {
+      padding: 0 36px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease, color 0.3s ease;
+      width: fit-content;
+      border-radius: 20px;
+      background: $brandPrimary;
+      border: 1px solid $brandPrimary;
+      color: $secondary;
+      text-shadow: none;
+      &::after {
+        display: none;
+      }
+      &:hover {
+        background: transparent;
+        color: $secondary;
+        border: 1px solid $secondary;
+      }
+    }
+  }
+
+  @media screen and (min-width: $largerThanSmall) {
+    padding: 0 $linksGap;
+    font-size: 16px;
+  }
+
+  // Hover state: the pseudo-element stretches from the center to full width
+  &:hover::after {
+    width: 60%;
+    left: 50%;
+    transform: translateX(-50%); // Align to the left once fully stretched
+  }
+}
+
+.LangSelector {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  @media screen and (min-width: $largerThanMobile) {
+    position: absolute;
+    right: 0;
+    top: 8px;
+    justify-content: center;
+  }
+}
+
+.MobNavbar {
+  display: block;
+  cursor: pointer;
+  position: relative;
+  @media screen and (min-width: $largerThanMobile) {
+    display: none;
+  }
+  .Line {
+    right: 0;
+    position: relative;
+    width: 40px;
+    height: 4px;
+    // background-color: $secondary;
+    margin-bottom: 5px;
+    transition: transform 0.1s;
+  }
+}
+
+.MobLinks {
+  background: $mobNavLinkBg;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: calc(-#{$mobMenuWidth} - #{$mobileContentSidePaddingLike} - 2px);
+  width: $mobMenuWidth;
+  min-height: 100vh;
+  padding-top: $mobNavbarHeight;
+  transition: right 0.3s;
+  &.Open {
+    right: 0;
+  }
+  @media screen and (min-width: $largerThanMobile) {
+    display: none;
+  }
+  .MobNavLink {
+    color: $mobNavLinkColor;
+    text-shadow: none;
+    font-size: 18px;
+    border-left: 3px solid transparent;
+    padding: 8px 0 8px 10px;
+    transition: all 0.2s;
+    &:hover {
+      border-left: 3px solid $brandPrimary;
+      background: $mobNavLinkHoverBg;
+    }
+  }
+}
