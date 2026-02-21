@@ -12,17 +12,21 @@ const Footer = async ({ lng }) => {
 
   return (
     <footer className={`${sourceCodePro.className} ${styles.Footer}`}>
-      <FooterContent content={content} companyInfo={companyInfo} />
-      <div className={styles.Divider} />
-      <div className={styles.Info}>
-        <span className={`${appStyles.Wrapper} ${styles.InfoContent}`}>
-          <span>&copy; {new Date().getFullYear()}</span>{' '}
-          <span className={styles.CompanyLegalName}>
-            {companyInfo.companyLegalName}
-          </span>{' '}
-          - <span>PIB: {companyInfo.pib}</span> -{' '}
-          <span>MB: {companyInfo.mb}</span>
-        </span>
+      <div className={appStyles.Wrapper}>
+        <FooterContent content={content} companyInfo={companyInfo} />
+        </div>
+        <div className={styles.Divider} />
+        <div className={appStyles.Wrapper}>
+        <div className={styles.Info}>
+          <span className={styles.InfoContent}>
+            <span>&copy; {new Date().getFullYear()}</span>{' '}
+            <span className={styles.CompanyLegalName}>
+              {companyInfo.companyLegalName}
+            </span>{' '}
+            - <span>PIB: {companyInfo.pib}</span> -{' '}
+            <span>MB: {companyInfo.mb}</span>
+          </span>
+        </div>
       </div>
     </footer>
   );

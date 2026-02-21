@@ -16,9 +16,9 @@ export const sourceCodePro = Source_Code_Pro({
 });
 
 export const metadata = {
-  title: 'Tronet',
+  title: 'Digital Eagle',
   description:
-    'Step through our doors and into a world of simple elegance where you can savor innovative culinary creations alongside spectacular panoramic views of The Old town of Budva, St. Nikola’s island and endless horizons.',
+    'Custom software development, product management, and design across fintech, maritime, cybersecurity, trading, and education technology. 13+ years delivering digital products across 4 continents.',
   icons: {
     icon: {
       url: '/favicon.ico',

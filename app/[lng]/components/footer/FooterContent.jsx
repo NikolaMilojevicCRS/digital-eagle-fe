@@ -1,6 +1,5 @@
 'use client';
 
-import appStyles from '@/app/[lng]/App.module.scss';
 import styles from './Footer.module.scss';
 import useInView from '@/app/hooks/useInView';
 import { useMemo, useState, useEffect } from 'react';
@@ -37,7 +36,7 @@ const FooterContent = ({ content, companyInfo }) => {
         aria-hidden="true"
       />
       <div
-        className={`${appStyles.Wrapper} ${styles.Content} ${hasBeenInView ? styles.InView : ''}`}
+        className={`${styles.Content} ${hasBeenInView ? styles.InView : ''}`}
       >
         <h4 className={styles.FooterHeading}>{content.footerHeading}</h4>
         <h4 className={styles.FooterText}>{content.text}</h4>
