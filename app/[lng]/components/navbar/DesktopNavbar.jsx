@@ -53,7 +53,7 @@ const DesktopNavbar = props => {
             <a
               key={index}
               href={`mailto: ${email}`}
-              className={`${styles.NavLink} ${styles.ContactLink}`}
+              className={`${styles.NavLink}`}
             >
               {item.title}
             </a>

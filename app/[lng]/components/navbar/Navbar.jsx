@@ -14,6 +14,9 @@ const Navbar = async ({ lng }) => {
     getLogo()
   ]);
 
+  const navLinks = content?.navigationItems ?? [];
+  const email = companyInfo?.email ?? '';
+
   return (
     <nav className={styles.Navbar}>
       <div
@@ -22,15 +25,15 @@ const Navbar = async ({ lng }) => {
         <LogoWrapper logoUrl={logoUrl} />
         <div className={styles.DesktopNavbar}>
           <DesktopNavbar
-            navLinks={content.navigationItems}
-            email={companyInfo.email}
+            navLinks={navLinks}
+            email={email}
             lng={lng}
           />
           <LanguageSelector />
         </div>
         <MobNavbar
-          navLinks={content.navigationItems}
-          email={companyInfo.email}
+          navLinks={navLinks}
+          email={email}
           lng={lng}
         />
       </div>
