@@ -1,6 +1,6 @@
 {
-  "name": "tronet-fe",
-  "version": "0.1.0",
+  "name": "digital-eagle-fe",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev -p 8080",

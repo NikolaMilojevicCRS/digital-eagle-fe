@@ -24,7 +24,8 @@ const MobNavbar = props => {
   }, []);
 
   const bgColor = useMemo(() => {
-    return open ? '#292929' : 'white';
+    return '#ffffff'
+    // return open ? '#292929' : 'white';
   }, [open]);
 
   return (

@@ -1,5 +1,6 @@
 import styles from './Navbar.module.scss';
 import appStyles from '../../App.module.scss';
+import NavbarScrollWrapper from '@/app/[lng]/components/navbar/NavbarScrollWrapper';
 import MobNavbar from '@/app/[lng]/components/navbar/MobNavbar';
 import DesktopNavbar from '@/app/[lng]/components/navbar/DesktopNavbar';
 import LanguageSelector from '@/app/[lng]/components/navbar/LanguageSelector';
@@ -18,7 +19,7 @@ const Navbar = async ({ lng }) => {
   const email = companyInfo?.email ?? '';
 
   return (
-    <nav className={styles.Navbar}>
+    <NavbarScrollWrapper>
       <div
         className={`${sourceCodePro.className} ${appStyles.Wrapper} ${styles.Content}`}
       >
@@ -37,7 +38,7 @@ const Navbar = async ({ lng }) => {
           lng={lng}
         />
       </div>
-    </nav>
+    </NavbarScrollWrapper>
   );
 };
 
