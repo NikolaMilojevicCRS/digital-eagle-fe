@@ -22,7 +22,7 @@
     justify-content: center;
     background-color: $tertiary;
     border: 1px solid $brandPrimary;
-    padding: 5rem 0;
+    padding: 5rem 4px;
     color: $secondary;
 
     @media screen and (min-width: $largerThanMobile) {
@@ -41,8 +41,9 @@
   }
 
   .KpiItemText {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     color: $secondary;
+    text-align: center;
   }
 
 }
